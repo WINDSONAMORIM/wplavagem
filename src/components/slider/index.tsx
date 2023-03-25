@@ -19,12 +19,7 @@ export const Slider = () => {
       setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth);
     }
   }, []);
-  /**
-   * app
-   *
-   *
-   *
-   */
+
   return (
     <div
       style={{
@@ -62,6 +57,7 @@ export const Slider = () => {
                   pointerEvents: "none",
                 }}
                 src={img}
+                alt="imagem carrosel"
               />
             </motion.div>
           ))}

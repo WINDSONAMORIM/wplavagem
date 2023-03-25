@@ -1,5 +1,6 @@
 import React from "react";
 import { HeaderAppBar } from "./components/appBar";
+import { FAB } from "./components/fab";
 import { Slider } from "./components/slider";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <HeaderAppBar />
       <Slider />
+      <FAB />
     </div>
   );
 }

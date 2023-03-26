@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -12,17 +12,19 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Avatar } from "@mui/material";
-
 import casalImage from "./../../assets/images/casal.jpg";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   window?: () => Window;
 }
 
 const drawerWidth = 240;
-const navItems = ["Início", "Sobre", "Contatos"];
+const navItems = ["Início", "Galeria", "Contatos"];
 
 export function HeaderAppBar(props: Props) {
+  const navigate = useNavigate();
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -49,6 +51,17 @@ export function HeaderAppBar(props: Props) {
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
+
+  const clicked = (item: string) => {
+    if (item === "Início") {
+      navigate("/");
+      return;
+    }
+    if (item === "Galeria") {
+      navigate("/galeria");
+      return;
+    }
+  };
 
   return (
     <Box
@@ -82,7 +95,11 @@ export function HeaderAppBar(props: Props) {
           />
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
+              <Button
+                onClick={() => clicked(item)}
+                key={item}
+                sx={{ color: "#fff" }}
+              >
                 {item}
               </Button>
             ))}

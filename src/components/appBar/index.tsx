@@ -61,6 +61,10 @@ export function HeaderAppBar(props: Props) {
       navigate("/galeria");
       return;
     }
+    if (item === "Contatos") {
+      navigate("/constatos");
+      return;
+    }
   };
 
   return (

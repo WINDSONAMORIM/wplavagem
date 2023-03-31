@@ -13,7 +13,7 @@ export const FAB = () => {
 
   return (
     <Fab size="medium" color="success" sx={fabStyle}>
-      <a href="https://api.whatsapp.com/send?phone=5511992597337">
+      <a href="https://api.whatsapp.com/send?phone=5511952765321">
         <WhatsAppIcon sx={{ color: "#ffffff", height: 60, width: 60 }} />
       </a>
     </Fab>
